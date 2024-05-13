@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/login">
+      <img src="./assets/images/freshcart-logo.svg" alt="" />
+    </a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul
+        class="navbar-nav me-auto mt-2 mt-lg-0 align-items-center justify-content-center"
+      >
+        <li class="nav-item">
+          <a
+            class="nav-link text-capitalize"
+            routerLinkActive="active-link"
+            routerLink="/home"
+            >home</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link text-capitalize"
+            routerLinkActive="active-link"
+            routerLink="/cart"
+            >cart</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-capitalize"
+            routerLinkActive="active-link"
+            routerLink="/products"
+            >products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-capitalize"
+            routerLinkActive="active-link"
+            routerLink="/categories"
+            >categories</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-capitalize"
+            routerLinkActive="active-link"
+            routerLink="/brands"
+            >brands</a
+          >
+        </li>
+      </ul>
+
+      <ul
+        class="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center justify-content-center"
+      >
+        <i class="fa-brands fa-instagram pe-3"></i>
+        <i class="fa-brands fa-facebook pe-3"></i>
+        <i class="fa-brands fa-linkedin pe-3"></i>
+        <i class="fa-brands fa-tiktok pe-3"></i>
+        <i class="fa-brands fa-twitter pe-3"></i>
+        <i class="fa-brands fa-youtube pe-3"></i>
+        <li class="nav-item">
+          <span class="cursor-pointer" (click)="signOut()">Sign Out</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

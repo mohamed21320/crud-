@@ -1,0 +1,59 @@
+<section class="bg-light m-4 p-4">
+  <h2>Register now:</h2>
+  <form [formGroup]="logInForm" (ngSubmit)="handleForm()">
+    <div class="m-2">
+      <label for="email">Email:</label>
+      <input
+        #inputEmail
+        id="email"
+        formControlName="email"
+        type="email"
+        class="form-control"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          logInForm.get('email')?.errors &&
+          (logInForm.get('email')?.touched || inputEmail.value.length > 0)
+        "
+      >
+        <p *ngIf="logInForm.get('email')?.getError('required')">
+          Email is Required
+        </p>
+        <p *ngIf="logInForm.get('email')?.getError('email')">
+          Email InValid Format
+        </p>
+      </div>
+    </div>
+
+    <div class="m-2">
+      <label for="password">Password:</label>
+      <input
+        #inputPassword
+        id="password"
+        formControlName="password"
+        type="password"
+        class="form-control"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          logInForm.get('password')?.errors &&
+          (logInForm.get('password')?.touched || inputPassword.value.length > 0)
+        "
+      >
+        <p *ngIf="logInForm.get('password')?.getError('required')">
+          Password is Required
+        </p>
+        <p *ngIf="logInForm.get('password')?.getError('pattern')">
+          password must start with upperCase then from 6 to 10
+        </p>
+      </div>
+    </div>
+
+    <button class="btn-main d-block ms-auto" [disabled]="logInForm.invalid">
+      Log In
+    </button>
+    <p class="alert alert-danger" *ngIf="msgErr">{{ msgErr }}</p>
+  </form>
+</section>
